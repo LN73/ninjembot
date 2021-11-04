@@ -1,0 +1,2 @@
+# ninjembot
+code de ninjem
