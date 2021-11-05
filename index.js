@@ -24,38 +24,6 @@
                 var arguments2, command;
 
 
-s4d.client.on('ready', async () => {
-
-          while(s4d.client && s4d.client.token) {
-              await delay(50);
-                s4d.client.user.setActivity(String('support: bit.ly/ninjembotsupport'));
-    await delay(Number(10)*1000);
-    s4d.client.user.setActivity(String('support: bit.ly/ninjembotinvite'));
-    await delay(Number(10)*1000);
-
-              console.log('ran')
-          }
-
-});
-
-s4d.client.on('ready', async () => {
-
-          while(s4d.client && s4d.client.token) {
-              await delay(50);
-                s4d.client.user.setActivity(String('support: bit.ly/ninjembotsupport'));
-    await delay(Number(10)*1000);
-    s4d.client.user.setActivity(String('support: bit.ly/ninjembotinvite'));
-    await delay(Number(10)*1000);
-
-              console.log('ran')
-          }
-
-});
-
-await s4d.client.login('token').catch((e) => { s4d.tokenInvalid = true; s4d.tokenError = e; });
-
-await s4d.client.login('token').catch((e) => { s4d.tokenInvalid = true; s4d.tokenError = e; });
-
 s4d.client.on('messageCreate', async (s4dmessage) => {
   arguments2 = (s4dmessage.content).split(' ');
   command = arguments2.splice(0, 1)[0];
@@ -65,34 +33,38 @@ s4d.client.on('messageCreate', async (s4dmessage) => {
 
 });
 
-s4d.client.on('messageCreate', async (s4dmessage) => {
-  arguments2 = (s4dmessage.content).split(' ');
-  command = arguments2.splice(0, 1)[0];
-  if (command == 'n/say') {
-    s4dmessage.channel.send(String((arguments2.join(' '))));
-  }
+s4d.client.on('ready', async () => {
+
+          while(s4d.client && s4d.client.token) {
+              await delay(50);
+                s4d.client.user.setActivity(String('support: bit.ly/ninjembotsupport'));
+    await delay(Number(5)*1000);
+    s4d.client.user.setActivity(String('support: bit.ly/ninjembotinvite'));
+    await delay(Number(5)*1000);
+    s4d.client.user.setActivity(String('Nombre de serveurs:'));
+    await delay(Number(5)*1000);
+    
+
+              console.log('ran')
+          }
 
 });
+
+await s4d.client.login('token').catch((e) => { s4d.tokenInvalid = true; s4d.tokenError = e; });
 
 s4d.client.on('messageCreate', async (s4dmessage) => {
   arguments2 = (s4dmessage.content).split(' ');
   command = arguments2.splice(0, 1)[0];
   if (command == 'n/liens') {
-    s4dmessage.channel.send(String((String(':NBS_arrow_animated: support' + 'https://bit.ly/ninjembotsupport') + String(':NBS_arrow_animated: m\'inviter' + 'https://bit.ly/ninjembotinvite'))));
+    const embed = new MessageEmbed()
+    .setTitle('Mes liens')
+    .addField('Tu souhaites m\'inviter sur ton serveur ?',':NBS_arrow_animated: [CLIQUE ICI](https://bit.ly/ninjembotinvite)')
+    .addField('Tu as besoin d\'aide ou tu as trouvé un bug ?',':NBS_arrow_animated: [CLIQUE ICI](https://bit.ly/ninjembotsupport)');
+
+s4dmessage.channel.send({ embeds: [embed] });
   }
 
 });
 
-s4d.client.on('messageCreate', async (s4dmessage) => {
-  arguments2 = (s4dmessage.content).split(' ');
-  command = arguments2.splice(0, 1)[0];
-  if (command == 'n/liens') {
-    s4dmessage.channel.send(String((String(':NBS_arrow_animated: support' + 'https://bit.ly/ninjembotsupport ') + String(':NBS_arrow_animated: m\'inviter' + 'https://bit.ly/ninjembotinvite'))));
-  }
-
-});
-
-
-                return s4d;
                 })();
             
