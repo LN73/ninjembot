@@ -4,5 +4,7 @@ Ninjem
 
 *le bot dont ton serveur a besoin*
 
+https://discord.gg/YYQYCe8X9x
+
 License
 MIT
